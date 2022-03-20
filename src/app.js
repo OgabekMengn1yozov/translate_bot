@@ -5,9 +5,20 @@ const SendText = require("./controllers/SendText")
 const translateText = require("./controllers/translateText")
 const mongo = require("./model/mongo")
 
-const bot = new TelegramBot(TOKEN, {
-    polling: true,
-})
+const options = {
+    webHook: {
+        port: 80
+    }
+}
+
+const url = "https://translatebotogabek.herokuapp.com:443"
+
+const bot = new TelegramBot(TOKEN, options)
+bot.setWebHook(`${url}/bot${TOKEN}`)
+
+// const bot = new TelegramBot(TOKEN, {
+//     polling: true,
+// })
 
 mongo()
 
