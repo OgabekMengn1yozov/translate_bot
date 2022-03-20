@@ -1,24 +1,28 @@
 const TelegramBot = require("node-telegram-bot-api")
-const { TOKEN } = require("../config")
+const { TOKEN, PORT } = require("../config")
 const editReplyKey = require("./controllers/editReplyKey")
 const SendText = require("./controllers/SendText")
 const translateText = require("./controllers/translateText")
 const mongo = require("./model/mongo")
 
-const options = {
+
+
+const url = "https://translatebotogabek.herokuapp.com"
+
+const bot = new TelegramBot(TOKEN, {
     webHook: {
-        port: 80
+        port: PORT
     }
-}
-
-const url = "https://translatebotogabek.herokuapp.com:443"
-
-const bot = new TelegramBot(TOKEN, options)
+});
 bot.setWebHook(`${url}/bot${TOKEN}`)
 
 // const bot = new TelegramBot(TOKEN, {
 //     polling: true,
 // })
+
+
+// bot.setWebHook(`${APP_URL}/bot${TOKEN}`);
+
 
 mongo()
 
