@@ -1,9 +1,11 @@
 const texts = require("../model/TextModel")
 const { v4 }  = require("uuid")
 const languages = require("./languages")
+const translateText = require("./translateText")
 
 module.exports = async function(bot, message) {
     try {
+
         const { text }  = message
         const userId = message.from.id
         let { message_id } = message
@@ -31,10 +33,9 @@ module.exports = async function(bot, message) {
             inline_keyboard: []
         }
         
-        let right = 20,
-            left = 0
+        
     
-        for(let i = left; i < right; i += 2) {
+        for(let i = 0; i < 20; i += 2) {
             let newRow = []
             newRow.push({
                 text: languages[i],
@@ -52,23 +53,23 @@ module.exports = async function(bot, message) {
         keyboard.inline_keyboard.push([
             {
                 text: "⬅️",
-                callback_data: "0",
+                callback_data: "0/20",
             },
             {
                 text: "❌",
-                callback_data: "cancel",
+                callback_data: "delete",
             },
             {
                 text: "➡️",
-                callback_data: "20",
+                callback_data: "20/40",
             }
         ])
     
         await bot.sendMessage(userId, `Tarjima tilini tanlang:`, 
         {
-            reply_to_message_id: message_id - 1,
+            reply_to_message_id: message_id,
             reply_markup: keyboard,
-        })        
+        })  
     } catch(e) {
         console.log(e + "")
     }

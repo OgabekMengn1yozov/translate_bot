@@ -1,5 +1,10 @@
-let languages = ["Afrikaans", 
- 	 	 	 	 	 	
+let languages = [           
+            "English"
+            ,
+            'Russian'
+            ,      
+            "Afrikaans"
+            ,  	 	 	
             "Albanian"
               ,                           
             "Amharic"
@@ -39,8 +44,6 @@ let languages = ["Afrikaans",
             "Danish"
               ,                            
             "Dutch"
-              ,                            
-            "English"
              ,                              
             "Esperanto"
              ,                           
@@ -149,9 +152,7 @@ let languages = ["Afrikaans",
             'Punjabi'
             ,                            
             'Romanian'
-             ,                             
-            'Russian'
-           ,                                
+             ,                                                       
             'Samoan'
             ,                           
             'Scots Gaelic'
