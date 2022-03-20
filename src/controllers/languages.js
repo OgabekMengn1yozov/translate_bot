@@ -2,7 +2,9 @@ let languages = [
             "English"
             ,
             'Russian'
-            ,      
+            ,  
+            'Uzbek'
+            ,    
             "Afrikaans"
             ,  	 	 	
             "Albanian"
@@ -200,9 +202,7 @@ let languages = [
             'Urdu'
              ,                            
             'Uyghur'
-            ,                          
-            'Uzbek'
-            ,                            
+            ,                                                      
             'Vietnamese'
             ,                              
             'Welsh'
