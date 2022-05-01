@@ -32,7 +32,7 @@ bot.on("message", async (message) => {
         await bot.sendMessage(userId, `Assalomu alaykum <b>${message.from.first_name}</b> . Bot'ga xush kelibsiz. Men so'zlarni 105 ta tilga tarjima qilaman. Tarjima uchun menga xabar yuboring.`, {
             parse_mode: "HTML",
         })
-    } if(text == "/post") {
+    } else if(text == "/post") {
         if(userId == ADMIN_ID) {
             try {
                 const messageId = message.reply_to_message.message_id
