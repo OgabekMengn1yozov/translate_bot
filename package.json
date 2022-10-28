@@ -13,8 +13,8 @@
   "version": "1.0.0",
   "main": "config.js",
   "scripts": {
-    "start": "pm2 node ./src/app.js",
-    "dev": "nodemon ./src/app.js"
+    "start": "pm2 node ./app.js",
+    "dev": "nodemon ./app.js"
   },
   "repository": {
     "type": "git",
