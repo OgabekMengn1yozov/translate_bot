@@ -1,10 +1,9 @@
-require("dotenv").config()
+require("dotenv").config();
 
-let { env } = process
+let { env } = process;
 
 module.exports = {
-    TOKEN: env.TOKEN,
-    MONGO_URL: env.MONGO_URL,
-    PORT: env.PORT,
-    ADMIN_ID: env.ADMIN_ID,
-}
+  TOKEN: env.TOKEN,
+  MONGO_URL: env.MONGO_URL,
+  ADMIN_ID: env.ADMIN_ID,
+};
