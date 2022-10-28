@@ -1,10 +1,10 @@
 const TelegramBot = require("node-telegram-bot-api");
-const { TOKEN, ADMIN_ID } = require("../config");
-const editReplyKey = require("./controllers/editReplyKey");
-const SendText = require("./controllers/SendText");
-const translateText = require("./controllers/translateText");
-const mongo = require("./model/mongo");
-const texts = require("./model/TextModel");
+const { TOKEN, ADMIN_ID } = require("./config");
+const editReplyKey = require("./src/controllers/editReplyKey");
+const SendText = require("./src/controllers/SendText");
+const translateText = require("./src/controllers/translateText");
+const mongo = require("./src/model/mongo");
+const texts = require("./src/model/TextModel");
 
 // const url = "https://translatebotogabek.herokuapp.com"
 
