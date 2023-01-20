@@ -1,12 +1,12 @@
 const TelegramBot = require("node-telegram-bot-api");
-const { TOKEN, ADMIN_ID } = require("./config");
+const { TOKEN, ADMIN_ID, PORT } = require("./config");
 const editReplyKey = require("./src/controllers/editReplyKey");
 const SendText = require("./src/controllers/SendText");
 const translateText = require("./src/controllers/translateText");
 const mongo = require("./src/model/mongo");
 const texts = require("./src/model/TextModel");
 
-const url = "https://ogaw.uz"
+const url = "https://bot.ogaw.uz/translatebot"
 
 const bot = new TelegramBot(TOKEN, {
     webHook: {
@@ -19,9 +19,7 @@ bot.setWebHook(`${url}/bot${TOKEN}`)
 //   polling: true,
 // });
 
-(async () => {
-  await mongo()
-})();
+mongo()
 
 bot.on("message", async (message) => {
   const userId = message.from.id;
