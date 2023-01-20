@@ -6,22 +6,22 @@ const translateText = require("./src/controllers/translateText");
 const mongo = require("./src/model/mongo");
 const texts = require("./src/model/TextModel");
 
-// const url = "https://translatebotogabek.herokuapp.com"
-
-// const bot = new TelegramBot(TOKEN, {
-//     webHook: {
-//         port: PORT
-//     }
-// });
-// bot.setWebHook(`${url}/bot${TOKEN}`)
+const url = "https://ogaw.uz"
 
 const bot = new TelegramBot(TOKEN, {
-  polling: true,
+    webHook: {
+        port: PORT
+    }
 });
+bot.setWebHook(`${url}/bot${TOKEN}`)
 
-// bot.setWebHook(`${APP_URL}/bot${TOKEN}`);
+// const bot = new TelegramBot(TOKEN, {
+//   polling: true,
+// });
 
-mongo();
+(async () => {
+  await mongo()
+})();
 
 bot.on("message", async (message) => {
   const userId = message.from.id;
